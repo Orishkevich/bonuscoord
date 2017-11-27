@@ -15,7 +15,7 @@ public class Bonus {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
-    private Date term;
+    private String term;
     private double amount;
 
     @ManyToOne
@@ -29,7 +29,7 @@ public class Bonus {
     public Bonus() {
     }
 
-    public Bonus(Date term, double amount, Coordinates coord, Person person) {
+    public Bonus(String term, double amount, Coordinates coord, Person person) {
         this();
         this.term = term;
         this.amount = amount;
@@ -45,11 +45,11 @@ public class Bonus {
         this.id = id;
     }
 
-    public Date getTerm() {
+    public String getTerm() {
         return term;
     }
 
-    public void setTerm(Date term) {
+    public void setTerm(String term) {
         this.term = term;
     }
 

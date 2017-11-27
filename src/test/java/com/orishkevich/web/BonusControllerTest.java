@@ -6,6 +6,7 @@ import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
+import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.http.MediaType;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.MockMvc;
@@ -19,6 +20,7 @@ import com.orishkevich.web.forms.Error;
 import com.orishkevich.web.forms.Success;
 
 
+import java.time.LocalTime;
 import java.util.Collections;
 import java.util.List;
 
@@ -49,7 +51,8 @@ public class BonusControllerTest {
     @MockBean
     private LimitService limit;
 
-    static final java.sql.Date date = new java.sql.Date(System.currentTimeMillis());
+    @DateTimeFormat(iso = DateTimeFormat.ISO.TIME) LocalTime time=LocalTime.now();
+    String date=time.toString();
 
     @Test
     public void whenPersonNotInBlackListThenApplyBonus() throws Exception {
