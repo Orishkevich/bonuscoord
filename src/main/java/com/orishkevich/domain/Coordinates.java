@@ -7,8 +7,9 @@ import javax.persistence.Id;
 
 /**
  * //TODO add comments
- *latitude and longitude
+ * latitude and longitude
  * широта и долгота
+ *
  * @author orishkevich
  * @since 26.11.2017
  */
@@ -18,15 +19,27 @@ public class Coordinates {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
-    //private String name;
     private double latitude, longitude;
 
-    public Coordinates(double latitude, double longitude) {
+//    @ManyToOne
+//    @JoinColumn(name="bonus_id")
+//    private Bonus bonus;
+//    @ManyToOne
+//    @JoinColumn(name="person_id")
+//    private Person person;
+
+    public Coordinates(double latitude, double longitude/*, Person person, Bonus bonus*/) {
         this();
         this.latitude = latitude;
         this.longitude = longitude;
+//        this.bonus = bonus;
+//        this.person = person;
     }
 
+//    public Coordinates(final int id) {
+//        this();
+//        this.id = id;
+//    }
     public double getLatitude() {
         return latitude;
     }
@@ -47,11 +60,6 @@ public class Coordinates {
     public Coordinates() {
     }
 
-//    public Coordinates(String name) {
-//        this();
-//        this.name = name;
-//    }
-
     public int getId() {
         return id;
     }
@@ -59,14 +67,6 @@ public class Coordinates {
     public void setId(int id) {
         this.id = id;
     }
-
-//    public String getName() {
-//        return name;
-//    }
-//
-//    public void setName(String name) {
-//        this.name = name;
-//    }
 
     @Override
     public boolean equals(Object o) {

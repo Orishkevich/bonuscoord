@@ -74,9 +74,9 @@ public class Bonus {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
 
-        Bonus loan = (Bonus) o;
+        Bonus bonus = (Bonus) o;
 
-        return id == loan.id;
+        return id == bonus.id;
 
     }
 

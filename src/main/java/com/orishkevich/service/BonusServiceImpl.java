@@ -25,8 +25,8 @@ public class BonusServiceImpl implements BonusService {
     }
 
     @Override
-    public Bonus apply(final Bonus loan) {
-        return this.repository.save(loan);
+    public Bonus apply(final Bonus bonus) {
+        return this.repository.save(bonus);
     }
 
     @Override

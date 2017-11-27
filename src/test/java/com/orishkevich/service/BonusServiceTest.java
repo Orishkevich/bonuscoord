@@ -35,18 +35,18 @@ public class BonusServiceTest {
     private BonusService service;
 
     @Test
-    public void whenApplyLoadThenSaveInDb() {
+    public void whenApplyBonusThenSaveInDb() {
         Person person = this.persons.save(new Person("Stanislav", "Orishkevich"));
-        Coordinates coord = this.coords.save(new Coordinates(1.0,2.0));
+        Coordinates coord = this.coords.save(new Coordinates(1.0, 2.0));
         Bonus bonus = this.service.apply(new Bonus(new Date(System.currentTimeMillis()), 1000d, coord, person));
         List<Bonus> result = this.service.getAll();
         assertTrue(result.contains(bonus));
     }
 
     @Test
-    public void whenFindByPersonThenReturnListOnlyForRerson() {
+    public void whenFindByPersonThenReturnListOnlyForPerson() {
         Person person = this.persons.save(new Person("Stanislav", "Orishkevich"));
-        Coordinates coord = this.coords.save(new Coordinates(3.0,4.0));
+        Coordinates coord = this.coords.save(new Coordinates(3.0, 4.0));
         Bonus bonus = this.service.apply(new Bonus(new Date(System.currentTimeMillis()), 1000d, coord, person));
         List<Bonus> result = this.service.getByPerson(person.getId());
         assertThat(result.iterator().next(), is(bonus));

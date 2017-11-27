@@ -10,4 +10,5 @@ import com.orishkevich.domain.Coordinates;
  * @since 26.11.2017
  */
 public interface CoordinatesRepository extends CrudRepository<Coordinates, Integer> {
+    //List<Bonus> findByCoordinates(Coordinates сoord);
 }
